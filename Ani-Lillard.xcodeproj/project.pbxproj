@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10346F5B1CFC408C0015B76B /* FNBlingBlingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10346F5A1CFC408C0015B76B /* FNBlingBlingLabel.swift */; };
 		10F4375C1CFB1CD9003A2D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F4375B1CFB1CD9003A2D3A /* AppDelegate.swift */; };
 		10F4375E1CFB1CD9003A2D3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F4375D1CFB1CD9003A2D3A /* ViewController.swift */; };
 		10F437611CFB1CD9003A2D3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F4375F1CFB1CD9003A2D3A /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10346F5A1CFC408C0015B76B /* FNBlingBlingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNBlingBlingLabel.swift; sourceTree = "<group>"; };
 		10F437581CFB1CD9003A2D3A /* Ani-Lillard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ani-Lillard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F4375B1CFB1CD9003A2D3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F4375D1CFB1CD9003A2D3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10346F591CFC40690015B76B /* FNBlingBlingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				10346F5A1CFC408C0015B76B /* FNBlingBlingLabel.swift */,
+			);
+			path = FNBlingBlingLabel;
+			sourceTree = "<group>";
+		};
 		10F4374F1CFB1CD9003A2D3A = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 		10F4375A1CFB1CD9003A2D3A /* Ani-Lillard */ = {
 			isa = PBXGroup;
 			children = (
+				10346F591CFC40690015B76B /* FNBlingBlingLabel */,
 				10F4375B1CFB1CD9003A2D3A /* AppDelegate.swift */,
 				10F4375D1CFB1CD9003A2D3A /* ViewController.swift */,
 				10F4375F1CFB1CD9003A2D3A /* Main.storyboard */,
@@ -135,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10346F5B1CFC408C0015B76B /* FNBlingBlingLabel.swift in Sources */,
 				10F4375E1CFB1CD9003A2D3A /* ViewController.swift in Sources */,
 				10F4375C1CFB1CD9003A2D3A /* AppDelegate.swift in Sources */,
 			);
@@ -286,6 +298,7 @@
 				10F4376C1CFB1CD9003A2D3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
