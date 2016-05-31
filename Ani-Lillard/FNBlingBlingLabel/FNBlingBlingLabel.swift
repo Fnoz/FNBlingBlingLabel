@@ -9,8 +9,8 @@
 import UIKit
 
 public class FNBlingBlingLabel: UILabel{
-    public var appearDuration = 3.0
-    public var disappearDuration = 3.0
+    public var appearDuration = 1.5
+    public var disappearDuration = 1.5
     public var attributedString:NSMutableAttributedString?
     
     var displaylink:CADisplayLink?
@@ -51,24 +51,24 @@ public class FNBlingBlingLabel: UILabel{
         endTime = CACurrentMediaTime() + appearDuration
         displaylink?.paused = false
         
-        durationArray = NSMutableArray.init(array: [])
-        for(var i = 0; i < self.attributedString?.length ; i += 1) {
-            let progress: CGFloat = 1 - (1 - CGFloat(arc4random_uniform(100))/100.0)/1.3
-            durationArray?.addObject(progress*CGFloat(appearDuration))
-        }
+        initDurationArray(appearDuration)
     }
     
     public func disappear() {
         isDisappearing = true
         beginTime = CACurrentMediaTime()
-        endTime = CACurrentMediaTime() + appearDuration
+        endTime = CACurrentMediaTime() + disappearDuration
         displaylink?.paused = false
-        
+        initDurationArray(disappearDuration)
+    }
+    
+    func initDurationArray(duration: Double) {
         durationArray = NSMutableArray.init(array: [])
         for(var i = 0; i < self.attributedString?.length ; i += 1) {
-            let progress: CGFloat = 1 - (1 - CGFloat(arc4random_uniform(100))/100.0)/1.3
-            durationArray?.addObject(progress*CGFloat(disappearDuration))
+            let progress: CGFloat = CGFloat(arc4random_uniform(100))/100.0
+            durationArray?.addObject(progress*CGFloat(duration))
         }
+        print(durationArray)
     }
     
     override init(frame: CGRect) {
@@ -94,7 +94,7 @@ public class FNBlingBlingLabel: UILabel{
                 isAppearing = false
             }
             for(var i = 0; i < self.attributedString?.length ; i += 1) {
-                var progress:CGFloat = CGFloat(pastDuration) / (durationArray![i] as! CGFloat)
+                var progress:CGFloat = CGFloat(pastDuration + (durationArray![i] as! Double) - appearDuration) / (durationArray![i] as! CGFloat)
                 if progress>1 {
                     progress = 1
                 }
@@ -108,7 +108,7 @@ public class FNBlingBlingLabel: UILabel{
                 isDisappearing = false
                 if isDisappearing4ChangeText {
                     isDisappearing4ChangeText = false
-                    appear()
+                    self.appear()
                 }
                 return
             }
