@@ -76,7 +76,7 @@ public class FNBlingBlingLabel: UILabel{
         durationArray = NSMutableArray.init(array: [])
         for(var i = 0; i < self.attributedString?.length ; i += 1) {
             let progress: CGFloat = CGFloat(arc4random_uniform(100))/100.0
-            durationArray?.addObject(progress * CGFloat(duration) * 0.6)
+            durationArray?.addObject(progress * CGFloat(duration) * 0.5)
         }
         print(durationArray)
     }
@@ -104,7 +104,7 @@ public class FNBlingBlingLabel: UILabel{
                 isAppearing = false
             }
             for(var i = 0; i < self.attributedString?.length ; i += 1) {
-                var progress:CGFloat = CGFloat((pastDuration - (durationArray![i] as! Double)) / (appearDuration * 0.6))
+                var progress:CGFloat = CGFloat((pastDuration - (durationArray![i] as! Double)) / (appearDuration * 0.5))
                 if progress>1 {
                     progress = 1
                 }
@@ -126,7 +126,7 @@ public class FNBlingBlingLabel: UILabel{
                 return
             }
             for(var i = 0; i < self.attributedString?.length ; i += 1) {
-                var progress:CGFloat = CGFloat((pastDuration - (durationArray![i] as! Double))/(disappearDuration * 0.6))
+                var progress:CGFloat = CGFloat((pastDuration - (durationArray![i] as! Double))/(disappearDuration * 0.5))
                 if progress>1 {
                     progress = 1
                 }

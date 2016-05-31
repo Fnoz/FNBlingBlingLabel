@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     var blingBlingLabel:FNBlingBlingLabel?
-    let textArray = ["盼望着，盼望着，东风来了，春天的脚步近了。\n一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。  ",
-                     "子曰：学而时习之，不亦悦乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？\n子曰：视其所以，观其所由，察其所安，人焉叟哉！人焉叟哉！",
-                     "利拉德是开拓者队的绝对核心，在场上经常能贡献逆天表现，他下赛季年薪高达2100万美元。"];
+    let textArray = ["轻轻的我走了，正如我轻轻的来；\n我轻轻的招手，作别西天的云彩。",
+                     "Very quietly I take my leave, As quietly as I came here; \nQuietly I wave good-bye, To the rosy clouds in the western sky.",
+                     "Douce et légère est ma démarche\nTout comme mon arrivée, légère\nMa main salue gentiment\nPour prendre congé des brumes de l’ouest."];
     var i = 0
     
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.init(red: 42/255.0, green: 49/255.0, blue: 67/255.0, alpha: 1)
         
         blingBlingLabel = FNBlingBlingLabel.init(frame: CGRectMake(0, 0, 300, 200))
-        blingBlingLabel?.needAnimation = false
+        blingBlingLabel?.needAnimation = true
         blingBlingLabel?.center = self.view.center
         blingBlingLabel?.numberOfLines = 0
         blingBlingLabel?.textColor = UIColor.whiteColor()
