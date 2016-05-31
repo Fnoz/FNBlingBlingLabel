@@ -12,6 +12,7 @@ public class FNBlingBlingLabel: UILabel{
     public var appearDuration = 1.5
     public var disappearDuration = 1.5
     public var attributedString:NSMutableAttributedString?
+    public var needAnimation = false
     
     var displaylink:CADisplayLink?
     var isAppearing:Bool = false
@@ -24,12 +25,21 @@ public class FNBlingBlingLabel: UILabel{
     
     override public var text: String? {
         get {
-            
-            return self.attributedString?.string
+            if needAnimation {
+                return self.attributedString?.string
+            }
+            else {
+                return super.text
+            }
         }
         
         set {
-            self.convertToAttributedString(newValue!)
+            if needAnimation {
+                self.convertToAttributedString(newValue!)
+            }
+            else {
+                super.text = newValue
+            }
         }
     }
     

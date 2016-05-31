@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.init(red: 42/255.0, green: 49/255.0, blue: 67/255.0, alpha: 1)
         
         blingBlingLabel = FNBlingBlingLabel.init(frame: CGRectMake(0, 0, 300, 200))
+        blingBlingLabel?.needAnimation = false
         blingBlingLabel?.center = self.view.center
         blingBlingLabel?.numberOfLines = 0
         blingBlingLabel?.textColor = UIColor.whiteColor()
