@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         blingBlingLabel.needAnimation = true
         blingBlingLabel.center = self.view.center
         blingBlingLabel.numberOfLines = 0
+        blingBlingLabel.font = UIFont.systemFontOfSize(23)
         blingBlingLabel.textColor = UIColor.whiteColor()
         blingBlingLabel.userInteractionEnabled = true
         self.view.addSubview(blingBlingLabel)
