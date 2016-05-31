@@ -66,7 +66,7 @@ public class FNBlingBlingLabel: UILabel{
         durationArray = NSMutableArray.init(array: [])
         for(var i = 0; i < self.attributedString?.length ; i += 1) {
             let progress: CGFloat = CGFloat(arc4random_uniform(100))/100.0
-            durationArray?.addObject(progress*CGFloat(duration))
+            durationArray?.addObject(progress * CGFloat(duration) * 0.6)
         }
         print(durationArray)
     }
@@ -89,12 +89,12 @@ public class FNBlingBlingLabel: UILabel{
     func updateAttributedString() {
         let pastDuration = CACurrentMediaTime() - beginTime!
         if isAppearing {
-            if pastDuration>appearDuration*2 {
+            if pastDuration>appearDuration {
                 displaylink?.paused = true
                 isAppearing = false
             }
             for(var i = 0; i < self.attributedString?.length ; i += 1) {
-                var progress:CGFloat = CGFloat((pastDuration - (durationArray![i] as! Double)) / appearDuration)
+                var progress:CGFloat = CGFloat((pastDuration - (durationArray![i] as! Double)) / (appearDuration * 0.6))
                 if progress>1 {
                     progress = 1
                 }
@@ -106,7 +106,7 @@ public class FNBlingBlingLabel: UILabel{
             }
         }
         if isDisappearing {
-            if pastDuration>disappearDuration*2 {
+            if pastDuration>disappearDuration {
                 displaylink?.paused = true
                 isDisappearing = false
                 if isDisappearing4ChangeText {
@@ -116,7 +116,7 @@ public class FNBlingBlingLabel: UILabel{
                 return
             }
             for(var i = 0; i < self.attributedString?.length ; i += 1) {
-                var progress:CGFloat = CGFloat((pastDuration - (durationArray![i] as! Double))/disappearDuration)
+                var progress:CGFloat = CGFloat((pastDuration - (durationArray![i] as! Double))/(disappearDuration * 0.6))
                 if progress>1 {
                     progress = 1
                 }
