@@ -89,21 +89,24 @@ public class FNBlingBlingLabel: UILabel{
     func updateAttributedString() {
         let pastDuration = CACurrentMediaTime() - beginTime!
         if isAppearing {
-            if pastDuration>appearDuration {
+            if pastDuration>appearDuration*2 {
                 displaylink?.paused = true
                 isAppearing = false
             }
             for(var i = 0; i < self.attributedString?.length ; i += 1) {
-                var progress:CGFloat = CGFloat(pastDuration + (durationArray![i] as! Double) - appearDuration) / (durationArray![i] as! CGFloat)
+                var progress:CGFloat = CGFloat((pastDuration - (durationArray![i] as! Double)) / appearDuration)
                 if progress>1 {
                     progress = 1
+                }
+                if progress<0 {
+                    progress = 0
                 }
                 let color = self.textColor.colorWithAlphaComponent(progress)
                 attributedString?.addAttributes([NSForegroundColorAttributeName: color], range: NSMakeRange(i, 1))
             }
         }
         if isDisappearing {
-            if pastDuration>disappearDuration {
+            if pastDuration>disappearDuration*2 {
                 displaylink?.paused = true
                 isDisappearing = false
                 if isDisappearing4ChangeText {
@@ -113,9 +116,12 @@ public class FNBlingBlingLabel: UILabel{
                 return
             }
             for(var i = 0; i < self.attributedString?.length ; i += 1) {
-                var progress:CGFloat = CGFloat(pastDuration) / (durationArray![i] as! CGFloat)
+                var progress:CGFloat = CGFloat((pastDuration - (durationArray![i] as! Double))/disappearDuration)
                 if progress>1 {
                     progress = 1
+                }
+                if progress<0 {
+                    progress = 0
                 }
                 let color = self.textColor.colorWithAlphaComponent(1 - progress)
                 attributedString?.addAttributes([NSForegroundColorAttributeName: color], range: NSMakeRange(i, 1))
