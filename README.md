@@ -16,3 +16,6 @@ Swift - Animation - Daily NO.01.
 
 ###效果：
 ![Animating](readme_images/animating.gif)
+
+###来源：
+OC原版是 [RQShineLabel](https://github.com/zipme/RQShineLabel)
