@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "10F437571CFB1CD9003A2D3A"
-               BuildableName = "Ani-Lillard.app"
-               BlueprintName = "Ani-Lillard"
-               ReferencedContainer = "container:Ani-Lillard.xcodeproj">
+               BlueprintIdentifier = "10647CAD1CFD79CC0023901C"
+               BuildableName = "FNBlingBlingLabel.app"
+               BlueprintName = "FNBlingBlingLabel"
+               ReferencedContainer = "container:FNBlingBlingLabel.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "10F437571CFB1CD9003A2D3A"
-            BuildableName = "Ani-Lillard.app"
-            BlueprintName = "Ani-Lillard"
-            ReferencedContainer = "container:Ani-Lillard.xcodeproj">
+            BlueprintIdentifier = "10647CAD1CFD79CC0023901C"
+            BuildableName = "FNBlingBlingLabel.app"
+            BlueprintName = "FNBlingBlingLabel"
+            ReferencedContainer = "container:FNBlingBlingLabel.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "10F437571CFB1CD9003A2D3A"
-            BuildableName = "Ani-Lillard.app"
-            BlueprintName = "Ani-Lillard"
-            ReferencedContainer = "container:Ani-Lillard.xcodeproj">
+            BlueprintIdentifier = "10647CAD1CFD79CC0023901C"
+            BuildableName = "FNBlingBlingLabel.app"
+            BlueprintName = "FNBlingBlingLabel"
+            ReferencedContainer = "container:FNBlingBlingLabel.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "10F437571CFB1CD9003A2D3A"
-            BuildableName = "Ani-Lillard.app"
-            BlueprintName = "Ani-Lillard"
-            ReferencedContainer = "container:Ani-Lillard.xcodeproj">
+            BlueprintIdentifier = "10647CAD1CFD79CC0023901C"
+            BuildableName = "FNBlingBlingLabel.app"
+            BlueprintName = "FNBlingBlingLabel"
+            ReferencedContainer = "container:FNBlingBlingLabel.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

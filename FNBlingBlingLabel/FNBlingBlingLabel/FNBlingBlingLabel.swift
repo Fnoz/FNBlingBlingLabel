@@ -1,6 +1,6 @@
 //
 //  FNBlingBlingLabel.swift
-//  Ani-Lillard
+//  FNBlingBlingLabel
 //
 //  Created by Fnoz on 16/5/30.
 //  Copyright © 2016年 Fnoz. All rights reserved.

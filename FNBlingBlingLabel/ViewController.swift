@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Ani-Lillard
+//  FNBlingBlingLabel
 //
 //  Created by Fnoz on 16/5/29.
 //  Copyright © 2016年 Fnoz. All rights reserved.
@@ -14,7 +14,7 @@ class ViewController: UIViewController {
                      "子曰：学而时习之，不亦悦乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？\n子曰：视其所以，观其所由，察其所安，人焉叟哉！人焉叟哉！",
                      "利拉德是开拓者队的绝对核心，在场上经常能贡献逆天表现，他下赛季年薪高达2100万美元。"];
     var i = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.init(red: 42/255.0, green: 49/255.0, blue: 67/255.0, alpha: 1)
@@ -34,12 +34,12 @@ class ViewController: UIViewController {
     func changeText() {
         blingBlingLabel?.text = textArray[(i++)%textArray.count]
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
