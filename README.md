@@ -1,5 +1,5 @@
 # FNBlingBlingLabel
-Swift - Animation - Daily NO.01.
+Swift实现的UILabel文字随机渐隐渐现, Swift版RQShineLabel.
 
 ###基础使用Demo：
 
