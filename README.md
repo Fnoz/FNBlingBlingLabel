@@ -1,6 +1,8 @@
 # FNBlingBlingLabel
 Swift实现的UILabel文字随机渐隐渐现, Swift版RQShineLabel.
 
+暂时没做Pod和Carthage.
+
 ###基础使用Demo：
 
 ```
