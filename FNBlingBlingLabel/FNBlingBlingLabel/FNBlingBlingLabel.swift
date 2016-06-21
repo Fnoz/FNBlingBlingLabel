@@ -22,6 +22,7 @@ public class FNBlingBlingLabel: UILabel{
     var endTime:CFTimeInterval?
     var durationArray:NSMutableArray?
     var lastString:NSString?
+    var textColorAlpha:CGFloat = 1
     
     override public var text: String? {
         get {
@@ -43,6 +44,16 @@ public class FNBlingBlingLabel: UILabel{
         }
     }
     
+    override public var textColor: UIColor! {
+        didSet
+        {
+            if CGColorGetAlpha(self.textColor.CGColor) > 0 {
+                print("fffffffff: %f", CGColorGetAlpha(self.textColor.CGColor))
+                textColorAlpha = CGColorGetAlpha(self.textColor.CGColor)
+            }
+        }
+    }
+    
     public func convertToAttributedString(text: NSString) {
         lastString = text
         if self.attributedText?.length > 0 {
@@ -56,6 +67,11 @@ public class FNBlingBlingLabel: UILabel{
     
     public func appear() {
         attributedString = NSMutableAttributedString.init(string: lastString! as String)
+        
+        let paragraphStyle = NSMutableParagraphStyle.init()
+        paragraphStyle.lineSpacing = 4
+        attributedString?.addAttributes([NSParagraphStyleAttributeName:paragraphStyle], range: NSMakeRange(0, lastString!.length))
+        
         isAppearing = true
         beginTime = CACurrentMediaTime()
         endTime = CACurrentMediaTime() + appearDuration
@@ -99,7 +115,7 @@ public class FNBlingBlingLabel: UILabel{
     func updateAttributedString() {
         let pastDuration = CACurrentMediaTime() - beginTime!
         if isAppearing {
-            if pastDuration>appearDuration {
+            if pastDuration > appearDuration {
                 displaylink?.paused = true
                 isAppearing = false
             }
@@ -111,7 +127,7 @@ public class FNBlingBlingLabel: UILabel{
                 if progress<0 {
                     progress = 0
                 }
-                let color = self.textColor.colorWithAlphaComponent(progress)
+                let color = self.textColor.colorWithAlphaComponent(progress * textColorAlpha)
                 attributedString?.addAttributes([NSForegroundColorAttributeName: color], range: NSMakeRange(i, 1))
             }
         }
@@ -127,13 +143,13 @@ public class FNBlingBlingLabel: UILabel{
             }
             for(var i = 0; i < self.attributedString?.length ; i += 1) {
                 var progress:CGFloat = CGFloat((pastDuration - (durationArray![i] as! Double))/(disappearDuration * 0.5))
-                if progress>1 {
+                if progress > 1 {
                     progress = 1
                 }
                 if progress<0 {
                     progress = 0
                 }
-                let color = self.textColor.colorWithAlphaComponent(1 - progress)
+                let color = self.textColor.colorWithAlphaComponent((1 - progress) * textColorAlpha)
                 attributedString?.addAttributes([NSForegroundColorAttributeName: color], range: NSMakeRange(i, 1))
             }
         }
